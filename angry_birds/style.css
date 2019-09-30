@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css?family=Mansalva&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Mansalva', cursive;
+}
+
+section.main {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+section.game {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    cursor: url(images/cursor.cur), auto;
+    background-image: url('images/fon.jpg');
+    background-size: cover;
+    transition: 1s cubic-bezier(0.23, 1, 0.320, 1);
+    transition-delay: 1s;
+    position: absolute;
+    left: 0;
+    top: -100vh;
+    
+}
+
+section.start-window {
+    height: 100vh;
+    position: relative;
+    background-image: url('images/0-start.jpg');
+    background-size: cover;
+    transition-delay: 1s;
+    transition: 1.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+}
+
+section.you-lose {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    background-image: url('images/lose.jpg');
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: -100vh;
+}
+
+section.you-win {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    background-image: url('images/win.jpg');
+    background-size: cover;
+    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: -100vh;
+}
+
+.funny {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 5em;
+    left: 0;
+    width: 100vw;
+}
+
+@keyframes move {
+    from {
+        transform: translateY(1em) rotateZ(-45deg) scale(1);
+    }
+    50% {
+        transform: translateY(-7em) rotateZ(0deg) scale(1.7);
+    }
+    to {
+        transform: translateY(2em) rotateZ(45deg) scale(1.1);
+    }
+}
+
+@keyframes play {
+    from {
+        transform: scaleZ(1.1);
+    }
+    to {
+        transform: translate(1em, 1em);
+    }
+}
+
+@keyframes divout {
+    from {
+        transform: scale(0.2) translateY(-100em);
+    }
+    50% {
+        transform: translateY(50em);
+        
+    }
+    to {
+        transform: scale(1);
+        top: 0;
+    }
+}
+
+@keyframes divlose {
+    from {
+        transform: translateY(50em) ;
+    }
+    50% {
+        transform:  scale(3) ;
+    }
+    to {
+        transform: scale(1) rotate(360deg);
+        top: 0;
+    }
+}
+
+@keyframes moveart {
+    from {
+        transform: rotateZ(-45deg);
+    }
+    25% {
+        transform: rotateZ(0deg);
+    }
+    50% {
+        transform: rotateZ(45deg);
+    }
+    75% {
+        transform: rotateZ(0deg);
+    }
+    to {
+        transform: rotateZ(-45deg);
+    }
+}
+
+.bird-start {
+    width: initial;
+    object-fit: contain;
+    transition: all 1s cubic-bezier(.32, -1.34, .45, 1.95);
+}
+
+.bird-start:nth-child(1) {
+    animation: moveart 1.5s infinite linear 1s;
+}
+
+.bird-start:nth-child(2) {
+    animation: moveart 1s infinite linear 2s;
+}
+
+.bird-start:nth-child(3) {
+    animation: moveart 1.5s infinite linear 3s;
+}
+
+.bird-start:nth-child(4) {
+    animation: moveart 1.5s infinite linear 4s;
+}
+
+.bird-start:hover {
+    animation: move 1s 1 ease-in-out;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.vh100 {
+    top: -100vh;
+}
+
+.play {
+    display: block;
+    position: absolute;
+    width: 260px;
+    height: 154px;
+    top: calc(50% - 77px);
+    left: calc(50% - 130px);
+    margin: auto auto;
+    z-index: 1000;
+    cursor: pointer;
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.play:hover {
+    transform: scale(1.2);
+}
+
+.life {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #80808045;
+    max-height: 6em;
+}
+
+.life>span {
+    display: block;
+    font-size: 3em;
+    text-align: center;
+    color: #424242;
+    padding: 0.1em 2em;
+    margin: 0.3em;
+    background: #f7f9f57d;
+    border-radius: 0.1em;
+    min-width: 4em;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #f7f9f57d;
+}
+
+.life .time-line {
+    display: block;
+    width: 100%;
+    min-height: 100%;
+    background: #f7f9f57d;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.life .bal-line {
+    display: block;
+    width: 0%;
+    min-height: 100%;
+    background: #f7f9f57d;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.life h2 {
+    font-size: 3em;
+    font-weight: 700;
+    color: brown;
+    text-align: center;
+}
+
+.bird:hover {
+    background-size: 2em;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .life {
+        flex-direction: column;
+        width: 100vw;
+    }
+    .life h2 {
+        font-size: 1em;
+        margin: 0%;
+        padding: 0.2em;
+        order: -1;
+    }
+    .life>span {
+        font-size: 1em;
+        border: 1px solid #f7f9f57d;
+        width: 80%;
+        margin: 0.2vh;
+    }
+}

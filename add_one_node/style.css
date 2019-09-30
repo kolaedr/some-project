@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
+
+section.main{
+    width: 80%;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1);
+}

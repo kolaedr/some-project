@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
+
+section.main{
+    width: 80%;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.article{
+    width: 30em;
+    min-width: 10em;
+    border: 1px solid rgb(151, 150, 150);
+    padding: 1em;
+    margin: 1em 0;
+    overflow: auto;
+}
+
+.article h2{
+    padding: 0 0 0.5em 0;
+    margin: 0;
+    font-size: 2em;
+    border-bottom: 1px solid #ccc;
+}
+
+.article p{
+    margin: 1em 0;
+    padding: 0.2em;
+}
+
+.article img{
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 1em;
+}
+
+.add-article{
+    display: inline-block;
+    margin: 0 auto;
+    padding: 18px 32px;
+    background: #2d8c6c;
+    color: #d7fafb;
+    font-size: 1em;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.add-article:hover{
+    background: #57caa3;
+    color: #f7f7f7;
+}
+
+input{
+    margin: 1em 0;
+}
+
+input[type='color']{
+    margin: 0.5em 0;
+}
+
+select {
+    width: 100px;
+    height: 23px;
+}
